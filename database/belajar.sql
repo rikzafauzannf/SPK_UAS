@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Nov 2020 pada 02.13
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.4.10
+-- Generation Time: Feb 02, 2023 at 04:07 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -32,30 +32,33 @@ CREATE TABLE `admin` (
   `nm_lengkap` varchar(250) NOT NULL,
   `username` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `nm_lengkap`, `username`, `password`) VALUES
-(1, 'Muhammad Surya J', 'suryamsj', '123321'),
-(2, 'Muhammad Rafif', 'afiapi', '123321');
+(1, 'Rikza Fauzan Nurfadilah', 'Rikza', '*23AE809DDACAF96AF0FD78ED04B6A265E05AA257'),
+(2, 'Fadhel Muhammad Apriansyah', 'Fadhel', '202cb962ac59075b964b07152d234b70'),
+(3, 'Yusri Azra Lazwardi', 'Yusri', '202cb962ac59075b964b07152d234b70'),
+(4, 'Rosi Maelani', 'Rosi', '202cb962ac59075b964b07152d234b70'),
+(5, 'Livia Nur Meilinda', 'Livia', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `alternatif`
+-- Table structure for table `alternatif`
 --
 
 CREATE TABLE `alternatif` (
   `id_les` int(11) NOT NULL,
   `kode_alternatif` varchar(250) NOT NULL,
   `nm_les` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `alternatif`
+-- Dumping data for table `alternatif`
 --
 
 INSERT INTO `alternatif` (`id_les`, `kode_alternatif`, `nm_les`) VALUES
@@ -66,7 +69,7 @@ INSERT INTO `alternatif` (`id_les`, `kode_alternatif`, `nm_les`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kriteria`
+-- Table structure for table `kriteria`
 --
 
 CREATE TABLE `kriteria` (
@@ -75,10 +78,10 @@ CREATE TABLE `kriteria` (
   `nm_kriteria` varchar(250) NOT NULL,
   `bobot` int(11) NOT NULL,
   `status` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `kriteria`
+-- Dumping data for table `kriteria`
 --
 
 INSERT INTO `kriteria` (`id_kriteria`, `kode_kriteria`, `nm_kriteria`, `bobot`, `status`) VALUES
@@ -90,7 +93,7 @@ INSERT INTO `kriteria` (`id_kriteria`, `kode_kriteria`, `nm_kriteria`, `bobot`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pembobotan`
+-- Table structure for table `pembobotan`
 --
 
 CREATE TABLE `pembobotan` (
@@ -98,10 +101,10 @@ CREATE TABLE `pembobotan` (
   `id_les` int(11) NOT NULL,
   `id_kriteria` int(11) NOT NULL,
   `nilai` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `pembobotan`
+-- Dumping data for table `pembobotan`
 --
 
 INSERT INTO `pembobotan` (`id_nilai`, `id_les`, `id_kriteria`, `nilai`) VALUES
@@ -123,25 +126,25 @@ INSERT INTO `pembobotan` (`id_nilai`, `id_les`, `id_kriteria`, `nilai`) VALUES
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indeks untuk tabel `alternatif`
+-- Indexes for table `alternatif`
 --
 ALTER TABLE `alternatif`
   ADD PRIMARY KEY (`id_les`);
 
 --
--- Indeks untuk tabel `kriteria`
+-- Indexes for table `kriteria`
 --
 ALTER TABLE `kriteria`
   ADD PRIMARY KEY (`id_kriteria`);
 
 --
--- Indeks untuk tabel `pembobotan`
+-- Indexes for table `pembobotan`
 --
 ALTER TABLE `pembobotan`
   ADD PRIMARY KEY (`id_nilai`),
@@ -149,39 +152,39 @@ ALTER TABLE `pembobotan`
   ADD KEY `KRITERIA` (`id_kriteria`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `alternatif`
+-- AUTO_INCREMENT for table `alternatif`
 --
 ALTER TABLE `alternatif`
   MODIFY `id_les` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `kriteria`
+-- AUTO_INCREMENT for table `kriteria`
 --
 ALTER TABLE `kriteria`
   MODIFY `id_kriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `pembobotan`
+-- AUTO_INCREMENT for table `pembobotan`
 --
 ALTER TABLE `pembobotan`
   MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `pembobotan`
+-- Constraints for table `pembobotan`
 --
 ALTER TABLE `pembobotan`
   ADD CONSTRAINT `KRITERIA` FOREIGN KEY (`id_kriteria`) REFERENCES `kriteria` (`id_kriteria`),
