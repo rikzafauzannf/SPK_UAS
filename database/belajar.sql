@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2023 at 04:07 AM
+-- Generation Time: Feb 02, 2023 at 04:11 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `nm_lengkap`, `username`, `password`) VALUES
-(1, 'Rikza Fauzan Nurfadilah', 'Rikza', '*23AE809DDACAF96AF0FD78ED04B6A265E05AA257'),
+(1, 'Rikza Fauzan Nurfadilah', 'Rikza', '202cb962ac59075b964b07152d234b70'),
 (2, 'Fadhel Muhammad Apriansyah', 'Fadhel', '202cb962ac59075b964b07152d234b70'),
 (3, 'Yusri Azra Lazwardi', 'Yusri', '202cb962ac59075b964b07152d234b70'),
 (4, 'Rosi Maelani', 'Rosi', '202cb962ac59075b964b07152d234b70'),
