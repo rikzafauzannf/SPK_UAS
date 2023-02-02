@@ -19,7 +19,7 @@ function Login($data)
 {
     $koneksi = Connect();
     $username = htmlspecialchars($data["username"]);
-    $password = htmlspecialchars($data["password"]);
+    $password = htmlspecialchars(MD5($data["password"]));
 
     if (Show("SELECT * FROM admin WHERE username='$username' && password='$password'")) {
         header("Location: page/index.php");
