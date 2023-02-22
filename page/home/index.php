@@ -1,4 +1,4 @@
-<section class="hero is-medium is-primary is-bold">
+<section class="hero is-medium is-bold" style="width:100%;height:100vh;background-image:linear-gradient(to left bottom,green,lime);">
     <div class="hero-body">
         <div class="container">
             <h1 class="title animate__animated animate__zoomIn">
